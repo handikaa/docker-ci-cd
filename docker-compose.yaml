@@ -1,0 +1,29 @@
+# versi format compose
+version: '3'
+
+#services 
+services:
+  #nama service
+  web:
+    # build context .
+    build: .
+
+    # port mapping 
+    ports:
+      - "3001:3001"
+    
+    # environment variable
+    environment:
+      - env=development
+    # #image yang digunakan
+    # image: node:14
+    # #perintah yang dijalankan saat container dijalankan
+    # command: node app.js
+    # #port yang digunakan
+    # ports:
+    #   - "3000:3000"
+    # #mount volume untuk menghubungkan file di host dengan file di container
+    # volumes:
+    #   - .:/app
+    # #set working directory di dalam container
+    # working_dir: /app
