@@ -1,0 +1,16 @@
+name: CI/CD Pipeline
+on: [push, pull_request] # Triggers the workflow on these events
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest # The environment where the code runs
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Set up environment
+        uses: actions/setup-node@v4 # Or setup-python, setup-java, etc.
+        with:
+          node-version: '20'
+      - name: Install dependencies
+        run: npm install
+      - name: Run tests
+        run: npm test
